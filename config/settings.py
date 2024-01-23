@@ -144,3 +144,9 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 CART_SESSION_ID = "cart"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+STRIPE_API_KEY = env("STRIPE_API_KEY")

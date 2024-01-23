@@ -8,6 +8,9 @@ django = "*"
 flake8 = "*"
 pillow = "*"
 django-environ = "*"
+celery = "*"
+flower = "*"
+stripe = "*"
 
 [dev-packages]
 
