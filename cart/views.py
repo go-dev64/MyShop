@@ -8,6 +8,15 @@ from .forms import CartAddProductForm
 
 
 def cart_detail(request):
+    """
+    Affiche le détail du panier.
+
+    :param request: La requête HTTP reçue.
+    :type request: HttpRequest
+    :return: La réponse HTTP avec le détail du panier rendu
+    dans le template "cart/detail.html".
+    :rtype: HttpResponse
+    """
     cart = Cart(request)
     for item in cart:
         item["update_quantity_form"] = CartAddProductForm(
@@ -18,6 +27,16 @@ def cart_detail(request):
 
 @require_POST
 def cart_add(request, product_id):
+    """
+    Adds a product to the cart.
+
+    :param request: The received HTTP request.
+    :type request: HttpRequest
+    :param product_id: The ID of the product to add.
+    :type product_id: int
+    :return: Redirects to the cart detail view.
+    :rtype: HttpResponse
+    """
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)

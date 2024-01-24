@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,8 @@ CART_SESSION_ID = "cart"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# Stripe settings
 STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
 STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
-STRIPE_API_KEY = env("STRIPE_API_KEY")
+STRIPE_API_KEY = "2023-10-16"
+STRIPE_WEBHOOK_SECRET = env("STRIPE_WEBHOOK_SECRET")
