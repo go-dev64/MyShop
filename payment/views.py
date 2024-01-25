@@ -23,13 +23,13 @@ def payment_process(request):
         # Stripe checkout session data
         session_data = {
             "mode": "payment",
-            "client_reference_id": order.id,
+            "client_reference_id": order.id,  # type: ignore
             "success_url": success_url,
             "cancel_url": cancel_url,
             "line_items": [],
         }
         # add order items to the Stripe checkout session
-        for item in order.items.all():
+        for item in order.items.all():  # type: ignore
             session_data["line_items"].append(
                 {
                     "price_data": {
@@ -40,6 +40,14 @@ def payment_process(request):
                     "quantity": item.quantity,
                 }
             )
+        # Stripe coupons
+        if order.coupon:
+            stripe_coupon = stripe.Coupon.create(
+                name=order.coupon.code,
+                percent_off=order.coupon.discount,
+                duration="once",
+            )
+            session_data["discounts"] = [{"coupon": stripe_coupon.id}]
         # Create Stripe checkout session
         session = stripe.checkout.Session.create(**session_data)
         # Redirect to Stripe payment form
