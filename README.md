@@ -1,2 +1,0 @@
-# MyShop
-Online shop demonstrator
