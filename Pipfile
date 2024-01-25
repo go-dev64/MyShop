@@ -12,6 +12,7 @@ celery = "*"
 flower = "*"
 stripe = "*"
 weasyprint = "*"
+redis = "*"
 
 [dev-packages]
 
