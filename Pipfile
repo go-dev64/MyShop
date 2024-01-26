@@ -13,6 +13,7 @@ flower = "*"
 stripe = "*"
 weasyprint = "*"
 redis = "*"
+django-rosetta = "*"
 
 [dev-packages]
 
