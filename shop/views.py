@@ -30,8 +30,8 @@ def product_detail(request, id, slug):
     product = get_object_or_404(
         Product,
         id=id,
-        translation__language_code=language,
-        translation__slug=slug,
+        translations__language_code=language,
+        translations__slug=slug,
         available=True,
     )
     cart_product_form = CartAddProductForm()
