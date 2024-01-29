@@ -14,6 +14,7 @@ stripe = "*"
 weasyprint = "*"
 redis = "*"
 django-rosetta = "*"
+django-parler = "*"
 
 [dev-packages]
 
