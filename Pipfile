@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+flake8 = "*"
+pillow = "*"
+django-environ = "*"
+celery = "*"
+flower = "*"
+stripe = "*"
+weasyprint = "*"
+redis = "*"
+django-rosetta = "*"
+django-parler = "*"
+python-webpack-boilerplate = "*"
+django-crispy-forms = "*"
+crispy-tailwind = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
